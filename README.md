@@ -7,3 +7,6 @@ A tool created to help you spend less time typing commands and more time getting
 Project repository: http://github.com/ssmv01/ccmd
 
 This is the temporary webpage to download the `get_ccmd.py` file in order to install `ccmd`
+
+###### MIT License
+###### SSMV01
