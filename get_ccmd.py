@@ -18,6 +18,7 @@ chdir(f'/home/{USERNAME}')
 retry = 0
 
 def install_dependencies():
+    global retry
     logging.info("Installing dependencies...")
     with Popen([sys.executable, '-m', 'pip', 'install', 'colorama'], stdout=PIPE, stderr=PIPE) as install_colorama:
         if b"No module named pip" in install_colorama.stderr.read():
@@ -28,15 +29,17 @@ def install_dependencies():
 
             logging.info("Installing pip...")
             with Popen([ sys.executable ,'-m', 'ensurepip', '--upgrade'], stdout=PIPE, stderr=PIPE) as install_pip:
-                if install_pip.stderr.read() == None:
+                if install_pip.stderr.read() != b'':
+                    logging.error("Failed to install pip")
+                    logging.info("exiting...")
+                    sys.exit(2)
+
+                else:
                     logging.info("pip installed.")
                     check_call(f'export PATH=/home/{USERNAME}/.local/bin:$PATH')
                     retry += 1
                     install_dependencies()
-                else:
-                    logging.error("Failed to install pip")
-                    logging.info("exiting...")
-                    sys.exit(2)
+
         elif install_colorama.stderr.read() != b'':
             print(install_colorama.stderr.read())
         else:
