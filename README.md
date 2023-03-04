@@ -1,6 +1,7 @@
 # CCMD
 
 [Link to web page](https://ssmv01.github.io/getccmd)
+[Project repo](https://ssmv01.github.io/ccmd)
 
 A tool created to help you spend less time typing commands and more time getting things done.
 
