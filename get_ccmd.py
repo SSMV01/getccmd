@@ -8,7 +8,7 @@ logging.basicConfig(format="%(levelname)s: %(message)s")
 logging.getLogger().setLevel(logging.INFO)
 
 USERNAME = environ.get('LOGNAME')
-VERSION = "v0.3.7-alpha"
+VERSION = "v0.3.9-alpha"
 
 print("CCMD")
 print('-' * 20)
@@ -32,7 +32,8 @@ def install_dependencies():
                 logging.info("Done.")
 
     except KeyboardInterrupt:
-        logging.info("\nExiting...")
+        print()
+        logging.info("Exiting...")
         sys.exit(1)
 
 def clone():
@@ -48,7 +49,8 @@ def clone():
         print(exception)
         sys.exit(2)
     except KeyboardInterrupt:
-        logging.info("\nExiting...")
+        print()
+        logging.info("Exiting...")
         sys.exit(1)
 
 
@@ -105,7 +107,8 @@ def main():
             print(VERSION)
 
     except KeyboardInterrupt:
-        logging.info("\nExiting...")
+        print()
+        logging.info("Exiting...")
         sys.exit(1)
 
 
