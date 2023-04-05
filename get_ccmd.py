@@ -7,8 +7,9 @@ from subprocess import check_call, Popen, PIPE
 logging.basicConfig(format="%(levelname)s: %(message)s")
 logging.getLogger().setLevel(logging.INFO)
 
+
 USERNAME = environ.get('LOGNAME')
-VERSION = "v0.3.9-alpha"
+VERSION = "v0.4.1-alpha"
 
 print("CCMD")
 print('-' * 20)
