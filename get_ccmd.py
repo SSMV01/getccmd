@@ -9,7 +9,7 @@ logging.getLogger().setLevel(logging.INFO)
 
 
 USERNAME = environ.get('LOGNAME')
-VERSION = "v0.4.1-alpha"
+VERSION = "v0.4.3-alpha"
 
 print("CCMD")
 print('-' * 20)
@@ -49,6 +49,7 @@ def clone():
     except FileNotFoundError as exception:
         print(exception)
         sys.exit(2)
+
     except KeyboardInterrupt:
         print()
         logging.info("Exiting...")
