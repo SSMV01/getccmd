@@ -9,5 +9,5 @@ For installation instructions: http://github.com/ssmv01/ccmd#installation
 
 This is the temporary webpage to download the `get_ccmd.py` file in order to install `ccmd`
 
-###### MIT License
-###### SSMV01
+MIT License
+SSMV01
